@@ -1,0 +1,31 @@
+import time
+import random
+sentences = [
+    "The quick brown fox jumps over the lazy dog.",
+    "Python is a popular programming language for beginners.",
+    "Typing fast can improve your productivity.",
+    "Artificial intelligence is the future of technology.",
+    "Practice makes perfect when learning to type quickly."
+]
+
+
+
+def typing_test():
+    randomize=random.choice(sentences)
+    print(randomize)
+    start_time=time.time()
+    user_input=input("Enter your input: ")
+    end_time=time.time()
+    total_time_elapsed=end_time-start_time
+    word_count=len(randomize.split())
+    wpm=(word_count/total_time_elapsed)*60
+    if(user_input==randomize):
+        print("Congratulations! You have got all correct. ")
+    else:
+        print("Oops! You have made some mistakes.")
+    
+    print(f"You have completed typing in {total_time_elapsed:.2f} seconds.")
+    print(f"Your typing speed is {wpm:.2f} words per minute.")
+
+typing_test()
+    
